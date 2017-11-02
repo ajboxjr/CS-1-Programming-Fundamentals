@@ -16,5 +16,6 @@ class TestPerson(unittest.TestCase):
         self.assertEqual(self.person2.did_survive_infection(), True)
 
 
+
 if __name__ == '__main__':
     unittest.main()

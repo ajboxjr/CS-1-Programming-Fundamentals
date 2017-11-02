@@ -107,39 +107,21 @@ class Simulation(object):
         infected_count = 0
         population = []
         is_vacc = False
-        while len(population) < self.pop_size:
+        while len(self.population) != self.population_size:
             virus = None
             if self.infected_count !=  self.initial_infected:
-                # TODO: Create all the infected people first, and then worry about the rest.
-                # Don't forget to increment infected_count every time you create a
-                # new infected person!
-                self.next_person_id +=1
                 infected_count +=1
                 virus = Virus(self.virus_name,self.mortality_rate, self.basic_repro_num)
             else:
-                # Now create all the rest of the people.
-                # Every time a new person will be created, generate a random number between
-                # 0 and 1.  If this number is smaller than vacc_percentage, this person
-                # should be created as a vaccinated person. If not, the person should be
-                # created as an unvaccinated person.
                 if(random.uniform(0,1) > self.vacc_percentage):
                     is_vacc = True
                 else:
                     is_vacc = False
-            # TODO: After any Person object is created, whether sick or healthy,
-            # you will need to increment self.next_person_id by 1. Each Person object's
-            # ID has to be unique!
-                self.next_person_id +=1
-                population.append(Person(self.next_person_id, is_vacc, virus))
-        return population
+            self.next_person_id +=1
+            population.append(Person(self.next_person_id, is_vacc, virus))
+        
 
     def _simulation_should_continue(self):
-        # TODO: Complete this method!  This method should return True if the simulation
-        # should continue, or False if it should not.  The simulation should end under
-        # any of the following circumstances:
-        #     - The entire population is dead.
-        #     - There are no infected people left in the population.
-        # In all other instances, the simulation should continue.
         if(self.current_infected == len(self.population)):
             return False
         elif(self.infected_population < 0):

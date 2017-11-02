@@ -74,6 +74,7 @@ class Logger(object):
         # NOTE: Make sure to end every line with a '/n' character to ensure that each
         # event logged ends up on a separate line!
         
+        c
 
         pass
 
@@ -87,9 +88,9 @@ class Logger(object):
         # on the format of the logs that this method should write.
         # Person 1 is definitely sick 
         if (did_infect):
-            print("/n{} infected {}.".format(person1, person2))
+            print("\n{} infected {}.".format(person1, person2))
         if person2_vacc:
-            print("/n{} is has a vaccination. {} count not infect".format(person1, person2)
+            print("\n{} is has a vaccination. {} count not infect".format(person1, person2)
             
         if person2_sick:
             print("/n{} is already sick. {} could not infect".format(person1, person2))
