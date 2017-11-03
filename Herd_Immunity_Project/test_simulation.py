@@ -1,10 +1,7 @@
+from simulation import Simulation
+from person import Person
+from virus import Virus
 import unittest
-import simulation
 
 class TestSimulation(unittest.TestCase):
-
-    def setUp(self):
-        pass
-    def test_did_survive_infection(self):
-        self.assertEquals(
-
+    def setUp()

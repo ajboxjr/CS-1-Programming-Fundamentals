@@ -58,7 +58,9 @@ class Person(object):
         # If person lives, set is_vaccinated = True, infected = None, return True.  
         death_likelihood = random.uniform(0,1)
         if self.infected:
+            print(death_likelihood, self.infected.get_morality_rate())
             if self.infected.get_morality_rate() >= death_likelihood:
+                print('is dead')
                 self.is_alive = False
                 return False
             else:

@@ -1,14 +1,14 @@
 class Virus(object):
-    def __init__(self,name, morality_rate, reproduction_rate):
-        self.name = name
+    def __init__(self, virus_name, repo_rate, morality_rate):
+        self.name = virus_name
+        self.repo_rate = repo_rate
         self.morality_rate = morality_rate
-        self.reproduction_rate = reproduction_rate
-    
-    def get_name(self):
-    	return self.name
-        
-    def get_sickness_percentage(self):
-    	return self.morality_rate
 
-    def get_reproduction_rate(self):
-    	return self.reproduction_rate
+    def get_repo_rate(self):
+        return self.repo_rate
+
+    def get_morality_rate(self):
+        return self.morality_rate
+    
+    def get_virus_name(self):
+        return self.name
